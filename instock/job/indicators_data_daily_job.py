@@ -22,6 +22,7 @@ __date__ = '2023/3/10 '
 
 
 def prepare(date):
+    print("每日指标数据预处理:" + date)
     try:
         stocks_data = stock_hist_data(date=date).get_data()
         if stocks_data is None:
@@ -86,6 +87,7 @@ def run_check(stocks, date=None, workers=40):
 # 对每日指标数据，进行筛选。将符合条件的。二次筛选出来。
 # 只是做简单筛选
 def guess_buy(date):
+    print("每日指标数据筛选(推荐买入):" + date)
     try:
         _table_name = tbs.TABLE_CN_STOCK_INDICATORS['name']
         if not mdb.checkTableIsExist(_table_name):
@@ -121,6 +123,7 @@ def guess_buy(date):
 
 # 设置卖出数据。
 def guess_sell(date):
+    print("每日指标数据筛选(推荐卖出):" + date)
     try:
         _table_name = tbs.TABLE_CN_STOCK_INDICATORS['name']
         if not mdb.checkTableIsExist(_table_name):

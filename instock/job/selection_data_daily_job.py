@@ -20,6 +20,7 @@ __date__ = '2023/5/5 '
 
 
 def save_nph_stock_selection_data(date, before=True):
+    print(f"股票龙虎榜。 {date}")
     if before:
         return
 

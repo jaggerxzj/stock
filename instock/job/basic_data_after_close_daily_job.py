@@ -19,6 +19,7 @@ __date__ = '2023/3/10 '
 
 # 每日股票大宗交易
 def save_after_close_stock_blocktrade_data(date):
+    print(f"每日股票大宗交易。 {date}")
     try:
         data = stf.fetch_stock_blocktrade_data(date)
         if data is None or len(data.index) == 0:

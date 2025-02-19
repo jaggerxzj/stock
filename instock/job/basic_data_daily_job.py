@@ -20,6 +20,7 @@ __date__ = '2023/3/10 '
 
 # 股票实时行情数据。
 def save_nph_stock_spot_data(date, before=True):
+    print(f"股票实时行情数据。 {date}")
     if before:
         return
     # 股票列表
@@ -45,6 +46,7 @@ def save_nph_stock_spot_data(date, before=True):
 
 # 基金实时行情数据。
 def save_nph_etf_spot_data(date, before=True):
+    print(f"基金实时行情数据。 {date}")
     if before:
         return
     # 股票列表

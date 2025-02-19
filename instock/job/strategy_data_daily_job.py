@@ -21,6 +21,7 @@ __date__ = '2023/3/10 '
 
 
 def prepare(date, strategy):
+    print(f"每日策略数据预处理：{date}")
     try:
         stocks_data = stock_hist_data(date=date).get_data()
         if stocks_data is None:

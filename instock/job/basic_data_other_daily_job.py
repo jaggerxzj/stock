@@ -21,6 +21,7 @@ __date__ = '2023/3/10 '
 
 # 每日股票龙虎榜
 def save_nph_stock_top_data(date, before=True):
+    print("每日股票龙虎榜：" + date)
     if before:
         return
 
@@ -45,6 +46,7 @@ def save_nph_stock_top_data(date, before=True):
 
 # 每日股票资金流向
 def save_nph_stock_fund_flow_data(date, before=True):
+    print("每日股票资金流向：" + date)
     if before:
         return
 
@@ -112,6 +114,7 @@ def run_check_stock_fund_flow(times):
 
 # 每日行业资金流向
 def save_nph_stock_sector_fund_flow_data(date, before=True):
+    print("每日行业资金流向:" + date)
     if before:
         return
 
@@ -182,6 +185,7 @@ def run_check_stock_sector_fund_flow(index_sector, times):
 
 # 每日股票分红配送
 def save_nph_stock_bonus(date, before=True):
+    print("每日股票分红配送:" + date)
     if before:
         return
 

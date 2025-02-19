@@ -430,14 +430,7 @@ docker run -dit --name InStock --link=InStockDbService \
 b.已经有Mysql、mariadb数据库，运行下面命令：
 
 ```
-docker run -dit --name InStock \
-    -p 9988:9988 \
-    -e db_host=localhost \
-    -e db_user=root \
-    -e db_password=root \
-    -e db_database=instockdb \
-    -e db_port=3306 \
-    mayanghua/instock:latest
+docker run -dit --name InStock -p 9988:9988 -e db_host=host.docker.internal -e db_user=root -e db_password=123456  -e db_database=instockdb -e db_port=3306 --add-host host.docker.internal:host-gateway mayanghua/instock:latest
 ```
 
 docker -e 参数说明：
@@ -479,7 +472,7 @@ K线形态作业 klinepattern_data_daily_job.py
 策略数据作业 python strategy_data_daily_job.py
 回测数据 python backtest_data_daily_job.py
 第一种方法：
-python execute_daily_job.py 2023-03-01,2023-03-02
+python InStock/instock/job/execute_daily_job.py 2025-01-01 2025-02-19
 第二种方法：
 修改run_job.sh，然后运行 bash InStock/instock/bin/run_job.sh
 ```
